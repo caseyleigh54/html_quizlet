@@ -78,7 +78,21 @@
             padding: 40px;
             border-radius: 2px;
             border: #dcdcdc solid 1px;
-            position: absolute;
+            
+            bottom: 20px;
+            right: 10%;
+            font-size: 30pt;
+            text-align: center;
+            color: #005e6a;
+            width: calc(80% - 80px);
+        }
+
+        .back-button {
+            background-color: #01bcd5;
+            padding: 40px;
+            border-radius: 2px;
+            border: #dcdcdc solid 1px;
+            
             bottom: 20px;
             right: 10%;
             font-size: 30pt;
@@ -129,6 +143,9 @@
 
     </div>
     <div class="next-button" id="next-button"> 
+    </div>
+    <div class="back-button" id="back-button" > 
+        Back
     </div>
 
     <script>
@@ -254,6 +271,15 @@
         var questionAnswersContainer = document.getElementById('answers-container')
         var nextButton = document.getElementById('next-button')
         var stepsContainer = document.getElementById('steps-container')
+        var backButton = document.getElementById('back-button')
+
+        backButton.onclick = function () {
+            if(step > 0){
+                step--
+                updateQuestion()
+                updateSteps()
+            }
+        }
 
         nextButton.onclick = function () {
             console.log(correct)
